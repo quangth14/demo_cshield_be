@@ -15,6 +15,7 @@ func HandleBatch(c *gin.Context) {
 	var req models.ReqBody
 
 	if err := c.ShouldBindJSON(&req); err != nil {
+		log.Printf("Log-detection Error: \n%s", err.Error())
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
