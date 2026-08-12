@@ -1,0 +1,23 @@
+
+
+# Build outputs
+/demo_cshield_be
+*.exe
+*.test
+*.out
+
+# Test and coverage artifacts
+coverage.out
+coverage.html
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Editor settings
+.idea/
+*.swp
+
+# OS metadata
+.DS_Store
