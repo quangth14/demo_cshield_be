@@ -2,10 +2,12 @@ package hanlder
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 
-	"github.com/gin-gonic/gin"
 	"demo_cshield_be/models"
+
+	"github.com/gin-gonic/gin"
 )
 
 // handleBatch: chỉ chạy sau khi authMiddleware pass -> decode + dedup + store.
@@ -19,7 +21,7 @@ func HandleBatch(c *gin.Context) {
 
 	var rawJson, _ = json.MarshalIndent(req, "", "  ")
 
-	println(string(rawJson))
+	log.Printf("Log-detection:\n%s", string(rawJson))
 
 	c.JSON(http.StatusOK, gin.H{"result": req, "raw_json": rawJson})
 }
